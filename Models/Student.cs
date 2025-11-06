@@ -6,17 +6,15 @@ namespace StudentManagementSystem.Models
     {
 
         public int Id { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Name is required")]
         [StringLength(100)]
         public string Name { get; set; }
 
-        [Required]
-        [EmailAddress]
-
+        [Required(ErrorMessage = "Email is required")]
+        [EmailAddress(ErrorMessage = "Invalid Email Address")]
         public string Email { get; set; }
-        [Required]
 
-
+        [Required(ErrorMessage = "Department is required")]
         public string Department { get; set; }
     }
 }
